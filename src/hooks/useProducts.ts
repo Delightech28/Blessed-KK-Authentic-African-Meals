@@ -30,6 +30,14 @@ export const useProducts = () => {
     return newProduct;
   };
 
+  const updateProduct = (id: string, updates: Partial<Omit<Product, "id">>) => {
+    const updated = customProducts.map((p) =>
+      p.id === id ? { ...p, ...updates } : p
+    );
+    setCustomProducts(updated);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  };
+
   const deleteProduct = (id: string) => {
     const updated = customProducts.filter((p) => p.id !== id);
     setCustomProducts(updated);
@@ -45,6 +53,7 @@ export const useProducts = () => {
     products: allProducts,
     customProducts,
     addProduct,
+    updateProduct,
     deleteProduct,
     getProductsByCategory,
   };

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Lock, Plus, Trash2, Upload, LogOut } from "lucide-react";
+import { Lock, Plus, Trash2, Upload, LogOut, Pencil, X, ImagePlus } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,9 +14,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { useProducts } from "@/hooks/useProducts";
-import { categories, formatPrice, ProductCategory } from "@/data/products";
+import { categories, formatPrice, ProductCategory, Product } from "@/data/products";
 
 const ADMIN_CODE = "12345";
 const AUTH_KEY = "sweetcrust_admin_auth";
@@ -26,14 +32,26 @@ const Admin = () => {
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const { toast } = useToast();
-  const { customProducts, addProduct, deleteProduct } = useProducts();
+  const { customProducts, addProduct, updateProduct, deleteProduct } = useProducts();
 
   // Form state
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState<ProductCategory>("Cakes");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageData, setImageData] = useState("");
+  const [imagePreview, setImagePreview] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Edit modal state
+  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [editName, setEditName] = useState("");
+  const [editPrice, setEditPrice] = useState("");
+  const [editDescription, setEditDescription] = useState("");
+  const [editCategory, setEditCategory] = useState<ProductCategory>("Cakes");
+  const [editImageData, setEditImageData] = useState("");
+  const [editImagePreview, setEditImagePreview] = useState("");
+  const editFileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const auth = sessionStorage.getItem(AUTH_KEY);
@@ -58,9 +76,54 @@ const Admin = () => {
     sessionStorage.removeItem(AUTH_KEY);
   };
 
+  const handleImageUpload = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setData: (data: string) => void,
+    setPreview: (preview: string) => void
+  ) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      toast({
+        title: "Invalid file",
+        description: "Please upload an image file",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (file.size > 2 * 1024 * 1024) {
+      toast({
+        title: "File too large",
+        description: "Please upload an image smaller than 2MB",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const base64 = event.target?.result as string;
+      setData(base64);
+      setPreview(base64);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const resetForm = () => {
+    setName("");
+    setPrice("");
+    setDescription("");
+    setImageData("");
+    setImagePreview("");
+    setCategory("Cakes");
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
   const handleAddProduct = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!name || !price || !description || !category) {
       toast({
         title: "Missing fields",
@@ -85,7 +148,7 @@ const Admin = () => {
       price: priceNum,
       description,
       category,
-      image: imageUrl || "/placeholder.svg",
+      image: imageData || "/placeholder.svg",
     });
 
     toast({
@@ -93,12 +156,66 @@ const Admin = () => {
       description: `${name} has been added to the menu.`,
     });
 
-    // Reset form
-    setName("");
-    setPrice("");
-    setDescription("");
-    setImageUrl("");
-    setCategory("Cakes");
+    resetForm();
+  };
+
+  const openEditModal = (product: Product) => {
+    setEditingProduct(product);
+    setEditName(product.name);
+    setEditPrice(product.price.toString());
+    setEditDescription(product.description);
+    setEditCategory(product.category);
+    setEditImageData(product.image);
+    setEditImagePreview(product.image);
+  };
+
+  const closeEditModal = () => {
+    setEditingProduct(null);
+    setEditName("");
+    setEditPrice("");
+    setEditDescription("");
+    setEditImageData("");
+    setEditImagePreview("");
+    if (editFileInputRef.current) editFileInputRef.current.value = "";
+  };
+
+  const handleUpdateProduct = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingProduct) return;
+
+    if (!editName || !editPrice || !editDescription || !editCategory) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const priceNum = parseFloat(editPrice);
+    if (isNaN(priceNum) || priceNum <= 0) {
+      toast({
+        title: "Invalid price",
+        description: "Please enter a valid price",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    updateProduct(editingProduct.id, {
+      name: editName,
+      price: priceNum,
+      description: editDescription,
+      category: editCategory,
+      image: editImageData || "/placeholder.svg",
+    });
+
+    toast({
+      title: "Product updated!",
+      description: `${editName} has been updated.`,
+    });
+
+    closeEditModal();
   };
 
   const handleDelete = (id: string, productName: string) => {
@@ -278,19 +395,52 @@ const Admin = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="imageUrl" className="font-body">
-                      Image URL (optional)
-                    </Label>
-                    <Input
-                      id="imageUrl"
-                      value={imageUrl}
-                      onChange={(e) => setImageUrl(e.target.value)}
-                      placeholder="https://example.com/image.jpg"
-                      className="mt-1"
-                    />
-                    <p className="text-xs text-muted-foreground mt-1 font-body">
-                      Leave empty to use placeholder image
-                    </p>
+                    <Label className="font-body">Product Image</Label>
+                    <div className="mt-1 space-y-3">
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) =>
+                          handleImageUpload(e, setImageData, setImagePreview)
+                        }
+                        className="hidden"
+                        id="image-upload"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="w-full"
+                      >
+                        <ImagePlus className="w-4 h-4 mr-2" />
+                        {imagePreview ? "Change Image" : "Upload Image"}
+                      </Button>
+                      {imagePreview && (
+                        <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-border">
+                          <img
+                            src={imagePreview}
+                            alt="Preview"
+                            className="w-full h-full object-cover"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setImageData("");
+                              setImagePreview("");
+                              if (fileInputRef.current)
+                                fileInputRef.current.value = "";
+                            }}
+                            className="absolute top-2 right-2 p-1 bg-destructive text-destructive-foreground rounded-full"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      )}
+                      <p className="text-xs text-muted-foreground font-body">
+                        Max file size: 2MB. Supported: JPG, PNG, WebP
+                      </p>
+                    </div>
                   </div>
 
                   <Button type="submit" variant="cta" className="w-full">
@@ -336,13 +486,22 @@ const Admin = () => {
                             {product.category} • {formatPrice(product.price)}
                           </p>
                         </div>
-                        <Button
-                          variant="destructive"
-                          size="icon"
-                          onClick={() => handleDelete(product.id, product.name)}
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={() => openEditModal(product)}
+                          >
+                            <Pencil className="w-4 h-4" />
+                          </Button>
+                          <Button
+                            variant="destructive"
+                            size="icon"
+                            onClick={() => handleDelete(product.id, product.name)}
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -353,6 +512,127 @@ const Admin = () => {
         </section>
       </main>
       <Footer />
+
+      {/* Edit Product Modal */}
+      <Dialog open={!!editingProduct} onOpenChange={() => closeEditModal()}>
+        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-heading">Edit Product</DialogTitle>
+          </DialogHeader>
+
+          <form onSubmit={handleUpdateProduct} className="space-y-4">
+            <div>
+              <Label htmlFor="edit-name" className="font-body">
+                Product Name *
+              </Label>
+              <Input
+                id="edit-name"
+                value={editName}
+                onChange={(e) => setEditName(e.target.value)}
+                placeholder="e.g., Chocolate Croissant"
+                className="mt-1"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="edit-price" className="font-body">
+                Price (₦) *
+              </Label>
+              <Input
+                id="edit-price"
+                type="number"
+                value={editPrice}
+                onChange={(e) => setEditPrice(e.target.value)}
+                placeholder="e.g., 1500"
+                className="mt-1"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="edit-category" className="font-body">
+                Category *
+              </Label>
+              <Select
+                value={editCategory}
+                onValueChange={(val) => setEditCategory(val as ProductCategory)}
+              >
+                <SelectTrigger className="mt-1">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((cat) => (
+                    <SelectItem key={cat} value={cat}>
+                      {cat}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label htmlFor="edit-description" className="font-body">
+                Description *
+              </Label>
+              <Textarea
+                id="edit-description"
+                value={editDescription}
+                onChange={(e) => setEditDescription(e.target.value)}
+                placeholder="Describe your product..."
+                className="mt-1"
+                rows={3}
+              />
+            </div>
+
+            <div>
+              <Label className="font-body">Product Image</Label>
+              <div className="mt-1 space-y-3">
+                <input
+                  ref={editFileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) =>
+                    handleImageUpload(e, setEditImageData, setEditImagePreview)
+                  }
+                  className="hidden"
+                  id="edit-image-upload"
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => editFileInputRef.current?.click()}
+                  className="w-full"
+                >
+                  <ImagePlus className="w-4 h-4 mr-2" />
+                  Change Image
+                </Button>
+                {editImagePreview && (
+                  <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-border">
+                    <img
+                      src={editImagePreview}
+                      alt="Preview"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="flex gap-3 pt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={closeEditModal}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+              <Button type="submit" variant="cta" className="flex-1">
+                Save Changes
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
