@@ -107,7 +107,7 @@ export const formatPrice = (price: number): string => {
 };
 
 export const generateWhatsAppLink = (product: Product, quantity: number = 1): string => {
-  const phoneNumber = "2348012345678"; // Replace with actual phone number
+  const phoneNumber = "2349163854228";
   const message = encodeURIComponent(
     `Hello SweetCrust Bakery 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability. Thank you! 🍰`
   );

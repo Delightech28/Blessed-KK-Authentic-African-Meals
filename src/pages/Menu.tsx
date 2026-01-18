@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
-import { products, categories, ProductCategory } from "@/data/products";
+import { categories, ProductCategory } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState<ProductCategory | "All">("All");
+  const { getProductsByCategory } = useProducts();
 
-  const filteredProducts = activeCategory === "All"
-    ? products
-    : products.filter((product) => product.category === activeCategory);
+  const filteredProducts = getProductsByCategory(activeCategory);
 
   return (
     <div className="min-h-screen">
