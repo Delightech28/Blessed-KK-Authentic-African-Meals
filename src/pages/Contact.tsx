@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 
 const Contact = () => {
   const whatsappLink =
-    "https://wa.me/2348012345678?text=Hello%20Blessed%20KK%20%F0%9F%91%8B%0AI%20would%20like%20to%20make%20an%20order.";
+    "https://wa.me/2348062838990?text=Hello%20Blessed%20KK%20%F0%9F%91%8B%0AI%20would%20like%20to%20make%20an%20order.";
 
   return (
     <div className="min-h-screen">
@@ -83,10 +83,10 @@ const Contact = () => {
                       Call Us
                     </h3>
                     <a
-                      href="tel:+2348012345678"
+                      href="tel:+2348062838990"
                       className="font-body text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +234 801 234 5678
+                      +234 806 283 8990
                     </a>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                     </h3>
                     <p className="font-body text-muted-foreground">
                       123 Bakery Street, Lekki Phase 1<br />
-                      Lagos, Nigeria
+                      Onitsha, Nigeria
                     </p>
                   </div>
                 </div>

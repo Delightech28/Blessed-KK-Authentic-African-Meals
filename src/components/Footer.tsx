@@ -81,7 +81,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-card/80">
                 <MapPin size={18} className="text-primary" />
-                <span>Lagos, Nigeria</span>
+                <span>Onitsha, Nigeria</span>
               </li>
             </ul>
           </div>
