@@ -12,19 +12,19 @@ const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Adaeze O.",
-    text: "The best chocolate cake I've ever had! So moist and delicious. My family loved it for my birthday celebration.",
+    text: "The quality of their garri is exceptional! Finally found authentic, fine garri that reminds me of home. My jollof rice has never tasted better!",
     rating: 5,
   },
   {
     id: "2",
     name: "Chidi M.",
-    text: "Their meat pies are incredible - crispy outside, perfectly seasoned inside. I order every weekend now!",
+    text: "Their palm oil is pure and authentic - no additives. Perfect for preparing traditional soups. I've been ordering every month and never disappointed!",
     rating: 5,
   },
   {
     id: "3",
     name: "Funke A.",
-    text: "Fresh doughnuts delivered right to my door. The kids were so happy! Will definitely order again.",
+    text: "The spice mix and dried crayfish are incredible - just like what my mother used to buy back home. Delivery was fast and everything arrived fresh. Highly recommended!",
     rating: 5,
   },
 ];
