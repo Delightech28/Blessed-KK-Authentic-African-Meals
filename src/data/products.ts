@@ -1,4 +1,4 @@
-// Product data for SweetCrust Bakery
+// Product data for Blessed KK Kitchen
 import chocolateCake from "@/assets/products/chocolate-cake.jpg";
 import glazedDoughnuts from "@/assets/products/glazed-doughnuts.jpg";
 import meatPies from "@/assets/products/meat-pies.jpg";
@@ -6,7 +6,12 @@ import cupcakes from "@/assets/products/cupcakes.jpg";
 import cookies from "@/assets/products/cookies.jpg";
 import redVelvetCake from "@/assets/products/red-velvet-cake.jpg";
 
-export type ProductCategory = "Cakes" | "Doughnuts" | "Meat Pies" | "Cupcakes" | "Cookies";
+export type ProductCategory =
+  | "Cakes"
+  | "Doughnuts"
+  | "Meat Pies"
+  | "Cupcakes"
+  | "Cookies";
 
 export interface Product {
   id: string;
@@ -17,7 +22,13 @@ export interface Product {
   category: ProductCategory;
 }
 
-export const categories: ProductCategory[] = ["Cakes", "Doughnuts", "Meat Pies", "Cupcakes", "Cookies"];
+export const categories: ProductCategory[] = [
+  "Cakes",
+  "Doughnuts",
+  "Meat Pies",
+  "Cupcakes",
+  "Cookies",
+];
 
 export const products: Product[] = [
   {
@@ -40,7 +51,8 @@ export const products: Product[] = [
     id: "glazed-doughnuts",
     name: "Glazed Doughnuts (6pcs)",
     price: 2500,
-    description: "Soft, fluffy doughnuts with sweet glaze and colorful sprinkles",
+    description:
+      "Soft, fluffy doughnuts with sweet glaze and colorful sprinkles",
     image: glazedDoughnuts,
     category: "Doughnuts",
   },
@@ -106,10 +118,13 @@ export const formatPrice = (price: number): string => {
   return `₦${price.toLocaleString()}`;
 };
 
-export const generateWhatsAppLink = (product: Product, quantity: number = 1): string => {
+export const generateWhatsAppLink = (
+  product: Product,
+  quantity: number = 1,
+): string => {
   const phoneNumber = "2349163854228";
   const message = encodeURIComponent(
-    `Hello SweetCrust Bakery 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability. Thank you! 🍰`
+    `Hello Blessed KK 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability. Thank you! 🍰`,
   );
   return `https://wa.me/${phoneNumber}?text=${message}`;
 };

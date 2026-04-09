@@ -24,7 +24,8 @@ const About = () => {
               transition={{ delay: 0.1 }}
               className="font-body text-muted-foreground max-w-2xl mx-auto"
             >
-              Our story is baked with passion, love, and a commitment to quality.
+              Our story is baked with passion, love, and a commitment to
+              quality.
             </motion.p>
           </div>
         </section>
@@ -63,29 +64,51 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 font-body text-muted-foreground">
                   <p>
-                    SweetCrust Bakery was born from a simple dream: to bring the warmth and comfort of homemade pastries to every home. What started in a small kitchen has grown into a beloved bakery serving hundreds of happy customers.
+                    Blessed KK Kitchen was born from a simple dream: to bring
+                    the warmth and comfort of homemade pastries to every home.
+                    What started in a small kitchen has grown into a beloved
+                    bakery serving hundreds of happy customers.
                   </p>
                   <p>
-                    Every morning, our bakers arrive before dawn to prepare fresh batches of your favorites. From our signature meat pies with their perfectly flaky crusts to our decadent chocolate cakes, each creation is made with love and the finest ingredients.
+                    Every morning, our bakers arrive before dawn to prepare
+                    fresh batches of your favorites. From our signature meat
+                    pies with their perfectly flaky crusts to our decadent
+                    chocolate cakes, each creation is made with love and the
+                    finest ingredients.
                   </p>
                   <p>
-                    We believe that great pastries bring people together. Whether it's a birthday celebration, a family gathering, or just a treat to brighten your day, we're honored to be part of your special moments.
+                    We believe that great pastries bring people together.
+                    Whether it's a birthday celebration, a family gathering, or
+                    just a treat to brighten your day, we're honored to be part
+                    of your special moments.
                   </p>
                 </div>
 
                 {/* Values */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="text-center p-4 bg-card rounded-2xl shadow-card">
-                    <div className="text-3xl font-heading font-bold text-primary">100%</div>
-                    <div className="text-sm font-body text-muted-foreground">Fresh Daily</div>
+                    <div className="text-3xl font-heading font-bold text-primary">
+                      100%
+                    </div>
+                    <div className="text-sm font-body text-muted-foreground">
+                      Fresh Daily
+                    </div>
                   </div>
                   <div className="text-center p-4 bg-card rounded-2xl shadow-card">
-                    <div className="text-3xl font-heading font-bold text-primary">5K+</div>
-                    <div className="text-sm font-body text-muted-foreground">Happy Customers</div>
+                    <div className="text-3xl font-heading font-bold text-primary">
+                      5K+
+                    </div>
+                    <div className="text-sm font-body text-muted-foreground">
+                      Happy Customers
+                    </div>
                   </div>
                   <div className="text-center p-4 bg-card rounded-2xl shadow-card">
-                    <div className="text-3xl font-heading font-bold text-primary">9+</div>
-                    <div className="text-sm font-body text-muted-foreground">Years Baking</div>
+                    <div className="text-3xl font-heading font-bold text-primary">
+                      9+
+                    </div>
+                    <div className="text-sm font-body text-muted-foreground">
+                      Years Baking
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -108,23 +131,32 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="p-6 bg-background rounded-2xl shadow-warm">
                   <div className="text-4xl mb-4">🌾</div>
-                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Quality Ingredients</h3>
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">
+                    Quality Ingredients
+                  </h3>
                   <p className="font-body text-sm text-muted-foreground">
-                    We use only the finest flour, butter, and fresh produce in every recipe.
+                    We use only the finest flour, butter, and fresh produce in
+                    every recipe.
                   </p>
                 </div>
                 <div className="p-6 bg-background rounded-2xl shadow-warm">
                   <div className="text-4xl mb-4">⏰</div>
-                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Fresh Every Day</h3>
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">
+                    Fresh Every Day
+                  </h3>
                   <p className="font-body text-sm text-muted-foreground">
-                    Our pastries are baked fresh each morning, never day-old or frozen.
+                    Our pastries are baked fresh each morning, never day-old or
+                    frozen.
                   </p>
                 </div>
                 <div className="p-6 bg-background rounded-2xl shadow-warm">
                   <div className="text-4xl mb-4">💛</div>
-                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Made With Love</h3>
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">
+                    Made With Love
+                  </h3>
                   <p className="font-body text-sm text-muted-foreground">
-                    Every pastry is crafted with care by our passionate baking team.
+                    Every pastry is crafted with care by our passionate baking
+                    team.
                   </p>
                 </div>
               </div>

@@ -4,7 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const Contact = () => {
-  const whatsappLink = "https://wa.me/2348012345678?text=Hello%20SweetCrust%20Bakery%20%F0%9F%91%8B%0AI%20would%20like%20to%20make%20an%20order.";
+  const whatsappLink =
+    "https://wa.me/2348012345678?text=Hello%20Blessed%20KK%20%F0%9F%91%8B%0AI%20would%20like%20to%20make%20an%20order.";
 
   return (
     <div className="min-h-screen">
@@ -50,7 +51,8 @@ const Contact = () => {
                     Order via WhatsApp
                   </h2>
                   <p className="font-body text-muted-foreground mb-8">
-                    The fastest way to place your order! Send us a message and we'll respond within minutes.
+                    The fastest way to place your order! Send us a message and
+                    we'll respond within minutes.
                   </p>
                   <a
                     href={whatsappLink}
@@ -80,7 +82,10 @@ const Contact = () => {
                     <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
                       Call Us
                     </h3>
-                    <a href="tel:+2348012345678" className="font-body text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="tel:+2348012345678"
+                      className="font-body text-muted-foreground hover:text-primary transition-colors"
+                    >
                       +234 801 234 5678
                     </a>
                   </div>
@@ -95,13 +100,13 @@ const Contact = () => {
                     <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
                       Follow Us
                     </h3>
-                    <a 
-                      href="https://instagram.com/sweetcrustbakery" 
-                      target="_blank" 
+                    <a
+                      href="https://instagram.com/blessedkk"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="font-body text-muted-foreground hover:text-primary transition-colors"
                     >
-                      @sweetcrustbakery
+                      @blessedkk
                     </a>
                   </div>
                 </div>
@@ -132,7 +137,8 @@ const Contact = () => {
                       Opening Hours
                     </h3>
                     <p className="font-body text-muted-foreground">
-                      Monday - Saturday: 7am - 8pm<br />
+                      Monday - Saturday: 7am - 8pm
+                      <br />
                       Sunday: 9am - 6pm
                     </p>
                   </div>
@@ -151,8 +157,10 @@ const Contact = () => {
                 🚚 Delivery & Pickup
               </h3>
               <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-                We deliver within Lagos! Delivery fees vary by location. Same-day delivery available for orders placed before 12pm. 
-                Prefer to pick up? Visit our store during opening hours — your fresh pastries will be waiting!
+                We deliver within Lagos! Delivery fees vary by location.
+                Same-day delivery available for orders placed before 12pm.
+                Prefer to pick up? Visit our store during opening hours — your
+                fresh pastries will be waiting!
               </p>
             </motion.div>
           </div>

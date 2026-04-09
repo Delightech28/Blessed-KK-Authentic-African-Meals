@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
-import { Product, products as defaultProducts, ProductCategory } from "@/data/products";
+import {
+  Product,
+  products as defaultProducts,
+  ProductCategory,
+} from "@/data/products";
 
-const STORAGE_KEY = "sweetcrust_custom_products";
+const STORAGE_KEY = "blessedkk_custom_products";
 
 export const useProducts = () => {
   const [customProducts, setCustomProducts] = useState<Product[]>([]);
@@ -32,7 +36,7 @@ export const useProducts = () => {
 
   const updateProduct = (id: string, updates: Partial<Omit<Product, "id">>) => {
     const updated = customProducts.map((p) =>
-      p.id === id ? { ...p, ...updates } : p
+      p.id === id ? { ...p, ...updates } : p,
     );
     setCustomProducts(updated);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));

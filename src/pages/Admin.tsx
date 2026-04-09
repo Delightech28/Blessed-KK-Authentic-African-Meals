@@ -1,6 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Lock, Plus, Trash2, Upload, LogOut, Pencil, X, ImagePlus } from "lucide-react";
+import {
+  Lock,
+  Plus,
+  Trash2,
+  Upload,
+  LogOut,
+  Pencil,
+  X,
+  ImagePlus,
+} from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -22,17 +31,23 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { useProducts } from "@/hooks/useProducts";
-import { categories, formatPrice, ProductCategory, Product } from "@/data/products";
+import {
+  categories,
+  formatPrice,
+  ProductCategory,
+  Product,
+} from "@/data/products";
 
 const ADMIN_CODE = "12345";
-const AUTH_KEY = "sweetcrust_admin_auth";
+const AUTH_KEY = "blessedkk_admin_auth";
 
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const { toast } = useToast();
-  const { customProducts, addProduct, updateProduct, deleteProduct } = useProducts();
+  const { customProducts, addProduct, updateProduct, deleteProduct } =
+    useProducts();
 
   // Form state
   const [name, setName] = useState("");
@@ -79,7 +94,7 @@ const Admin = () => {
   const handleImageUpload = (
     e: React.ChangeEvent<HTMLInputElement>,
     setData: (data: string) => void,
-    setPreview: (preview: string) => void
+    setPreview: (preview: string) => void,
   ) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -365,7 +380,9 @@ const Admin = () => {
                     </Label>
                     <Select
                       value={category}
-                      onValueChange={(val) => setCategory(val as ProductCategory)}
+                      onValueChange={(val) =>
+                        setCategory(val as ProductCategory)
+                      }
                     >
                       <SelectTrigger className="mt-1">
                         <SelectValue />
@@ -497,7 +514,9 @@ const Admin = () => {
                           <Button
                             variant="destructive"
                             size="icon"
-                            onClick={() => handleDelete(product.id, product.name)}
+                            onClick={() =>
+                              handleDelete(product.id, product.name)
+                            }
                           >
                             <Trash2 className="w-4 h-4" />
                           </Button>

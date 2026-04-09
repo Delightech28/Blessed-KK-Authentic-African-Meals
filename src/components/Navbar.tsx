@@ -22,7 +22,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl md:text-3xl font-heading font-bold text-primary">
-              SweetCrust
+              Blessed KK
             </span>
             <span className="text-sm md:text-base font-body text-muted-foreground">
               Bakery
