@@ -7,7 +7,9 @@ import { categories, ProductCategory } from "@/data/products";
 import { useProducts } from "@/hooks/useProducts";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<ProductCategory | "All">(
+    "All",
+  );
   const { getProductsByCategory } = useProducts();
 
   const filteredProducts = getProductsByCategory(activeCategory);
@@ -32,7 +34,8 @@ const Menu = () => {
               transition={{ delay: 0.1 }}
               className="font-body text-muted-foreground max-w-2xl mx-auto"
             >
-              Browse our delicious selection of freshly baked treats. Click any item to order directly via WhatsApp!
+              Browse our premium selection of authentic African foodstuffs.
+              Click any item to order directly via WhatsApp!
             </motion.p>
           </div>
         </section>

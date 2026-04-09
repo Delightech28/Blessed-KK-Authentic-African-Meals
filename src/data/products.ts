@@ -7,11 +7,11 @@ import cookies from "@/assets/products/cookies.jpg";
 import redVelvetCake from "@/assets/products/red-velvet-cake.jpg";
 
 export type ProductCategory =
-  | "Cakes"
-  | "Doughnuts"
-  | "Meat Pies"
-  | "Cupcakes"
-  | "Cookies";
+  | "Grains"
+  | "Spices & Seasonings"
+  | "Proteins"
+  | "Oils & Condiments"
+  | "Legumes";
 
 export interface Product {
   id: string;
@@ -23,94 +23,98 @@ export interface Product {
 }
 
 export const categories: ProductCategory[] = [
-  "Cakes",
-  "Doughnuts",
-  "Meat Pies",
-  "Cupcakes",
-  "Cookies",
+  "Grains",
+  "Spices & Seasonings",
+  "Proteins",
+  "Oils & Condiments",
+  "Legumes",
 ];
 
 export const products: Product[] = [
   {
-    id: "chocolate-cake",
-    name: "Classic Chocolate Cake",
-    price: 4500,
-    description: "Rich, moist chocolate cake with creamy ganache frosting",
-    image: chocolateCake,
-    category: "Cakes",
-  },
-  {
-    id: "red-velvet-cake",
-    name: "Red Velvet Cake",
-    price: 5000,
-    description: "Velvety red cake with smooth cream cheese frosting",
-    image: redVelvetCake,
-    category: "Cakes",
-  },
-  {
-    id: "glazed-doughnuts",
-    name: "Glazed Doughnuts (6pcs)",
-    price: 2500,
+    id: "premium-garri",
+    name: "Premium White Garri (5kg)",
+    price: 3500,
     description:
-      "Soft, fluffy doughnuts with sweet glaze and colorful sprinkles",
-    image: glazedDoughnuts,
-    category: "Doughnuts",
+      "Fine, quality white garri made from cassava - perfect for jollof and soups",
+    image: chocolateCake,
+    category: "Grains",
   },
   {
-    id: "chocolate-doughnuts",
-    name: "Chocolate Doughnuts (6pcs)",
-    price: 2800,
-    description: "Irresistible doughnuts dipped in rich chocolate",
-    image: glazedDoughnuts,
-    category: "Doughnuts",
+    id: "yellow-garri",
+    name: "Yellow Garri (5kg)",
+    price: 3800,
+    description:
+      "Authentic yellow garri with rich flavor, ideal for traditional dishes",
+    image: redVelvetCake,
+    category: "Grains",
   },
   {
-    id: "classic-meat-pies",
-    name: "Classic Meat Pies (4pcs)",
+    id: "long-grain-rice",
+    name: "Long Grain Rice (10kg)",
+    price: 8500,
+    description: "Premium long grain parboiled rice, fluffy when cooked",
+    image: glazedDoughnuts,
+    category: "Grains",
+  },
+  {
+    id: "basmati-rice",
+    name: "Basmati Rice (5kg)",
+    price: 7200,
+    description:
+      "Fragrant basmati rice for special occasions and quality meals",
+    image: glazedDoughnuts,
+    category: "Grains",
+  },
+  {
+    id: "dried-locust-beans",
+    name: "Dried Locust Beans (500g)",
     price: 2000,
-    description: "Golden, flaky pastry filled with savory seasoned beef",
+    description: "Authentic iru - essential for soups and traditional stews",
     image: meatPies,
-    category: "Meat Pies",
+    category: "Proteins",
   },
   {
-    id: "chicken-pies",
-    name: "Chicken Pies (4pcs)",
-    price: 2200,
-    description: "Crispy pies stuffed with tender chicken and herbs",
+    id: "frozen-shrimp",
+    name: "Frozen Shrimp (500g)",
+    price: 4500,
+    description: "High-quality frozen shrimp for seafood meals",
     image: meatPies,
-    category: "Meat Pies",
+    category: "Proteins",
   },
   {
-    id: "vanilla-cupcakes",
-    name: "Vanilla Cupcakes (6pcs)",
+    id: "palm-oil",
+    name: "Red Palm Oil (1 liter)",
     price: 3000,
-    description: "Light vanilla cupcakes with swirled buttercream",
+    description:
+      "Pure, quality red palm oil - the heart of authentic African cooking",
     image: cupcakes,
-    category: "Cupcakes",
+    category: "Oils & Condiments",
   },
   {
-    id: "strawberry-cupcakes",
-    name: "Strawberry Cupcakes (6pcs)",
-    price: 3200,
-    description: "Fresh strawberry cupcakes with pink frosting",
+    id: "vegetable-oil",
+    name: "Premium Vegetable Oil (2 liters)",
+    price: 5500,
+    description: "Refined vegetable oil for frying and cooking",
     image: cupcakes,
-    category: "Cupcakes",
+    category: "Oils & Condiments",
   },
   {
-    id: "chocolate-chip-cookies",
-    name: "Chocolate Chip Cookies (12pcs)",
+    id: "pepperspice-mix",
+    name: "African Pepper & Spice Mix (200g)",
     price: 1800,
-    description: "Chewy cookies loaded with chocolate chips",
+    description:
+      "Authentic blend of peppers and spices for traditional seasonings",
     image: cookies,
-    category: "Cookies",
+    category: "Spices & Seasonings",
   },
   {
-    id: "butter-cookies",
-    name: "Butter Cookies (12pcs)",
-    price: 1500,
-    description: "Classic buttery cookies that melt in your mouth",
+    id: "crayfish",
+    name: "Dried Crayfish (300g)",
+    price: 2200,
+    description: "Premium dried crayfish for authentic flavor in soups",
     image: cookies,
-    category: "Cookies",
+    category: "Proteins",
   },
 ];
 
@@ -124,7 +128,7 @@ export const generateWhatsAppLink = (
 ): string => {
   const phoneNumber = "2349163854228";
   const message = encodeURIComponent(
-    `Hello Blessed KK 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability. Thank you! 🍰`,
+    `Hello Blessed KK 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability and delivery time. Thank you! 🙏`,
   );
   return `https://wa.me/${phoneNumber}?text=${message}`;
 };

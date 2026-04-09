@@ -24,8 +24,8 @@ const About = () => {
               transition={{ delay: 0.1 }}
               className="font-body text-muted-foreground max-w-2xl mx-auto"
             >
-              Our story is baked with passion, love, and a commitment to
-              quality.
+              Our story is rooted in bringing authentic African culinary
+              traditions and premium ingredients to every home.
             </motion.p>
           </div>
         </section>
@@ -60,27 +60,27 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-                  Baking Joy Since <span className="text-primary">2015</span>
+                  Serving Quality Since{" "}
+                  <span className="text-primary">2015</span>
                 </h2>
                 <div className="space-y-4 font-body text-muted-foreground">
                   <p>
                     Blessed KK Kitchen was born from a simple dream: to bring
-                    the warmth and comfort of homemade pastries to every home.
-                    What started in a small kitchen has grown into a beloved
-                    bakery serving hundreds of happy customers.
+                    authentic African foodstuffs and meal ingredients to every
+                    home. What started in a small shop has grown into a trusted
+                    supplier serving hundreds of satisfied families.
                   </p>
                   <p>
-                    Every morning, our bakers arrive before dawn to prepare
-                    fresh batches of your favorites. From our signature meat
-                    pies with their perfectly flaky crusts to our decadent
-                    chocolate cakes, each creation is made with love and the
-                    finest ingredients.
+                    Every day, we carefully source and curate the finest African
+                    ingredients — from premium garri and quality rice to
+                    aromatic spices and palm oil. Each product is selected with
+                    care and delivered fresh to your doorstep.
                   </p>
                   <p>
-                    We believe that great pastries bring people together.
-                    Whether it's a birthday celebration, a family gathering, or
-                    just a treat to brighten your day, we're honored to be part
-                    of your special moments.
+                    We believe that quality ingredients bring authentic flavors
+                    and families together. Whether it's everyday cooking or
+                    special family meals, we're honored to be part of your
+                    culinary journey.
                   </p>
                 </div>
 
@@ -107,7 +107,7 @@ const About = () => {
                       9+
                     </div>
                     <div className="text-sm font-body text-muted-foreground">
-                      Years Baking
+                      Years of Service
                     </div>
                   </div>
                 </div>

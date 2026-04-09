@@ -12,8 +12,8 @@ export const Footer = () => {
               Blessed KK Kitchen
             </h3>
             <p className="text-card/80 font-body">
-              Freshly baked pastries made with love, quality ingredients, and a
-              passion for perfection.
+              Premium African foodstuffs and authentic meal ingredients, sourced
+              with care and delivered with excellence.
             </p>
           </div>
 

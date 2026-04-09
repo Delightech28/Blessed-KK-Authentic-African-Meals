@@ -25,7 +25,7 @@ export const Navbar = () => {
               Blessed KK
             </span>
             <span className="text-sm md:text-base font-body text-muted-foreground">
-              Bakery
+              Kitchen
             </span>
           </Link>
 

@@ -11,7 +11,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Freshly baked pastries"
+          alt="Authentic African foodstuffs and ingredients"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
@@ -26,7 +26,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block bg-primary/20 text-primary font-body font-medium px-4 py-2 rounded-full mb-6">
-              🥐 Fresh From Our Oven
+              🍚 Authentic African Foodstuffs
             </span>
           </motion.div>
 
@@ -36,8 +36,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight mb-6"
           >
-            Freshly Baked Pastries{" "}
-            <span className="text-primary">Made With Love</span>
+            Premium African Meals{" "}
+            <span className="text-primary">Made With Authenticity</span>
           </motion.h1>
 
           <motion.p
@@ -46,7 +46,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl font-body text-muted-foreground mb-8"
           >
-            Cakes, doughnuts, meat pies & more — baked fresh daily for every sweet moment.
+            Garri, rice, beans, palm oil, spices & more — authentic African
+            ingredients sourced with care for your kitchen.
           </motion.p>
 
           <motion.div

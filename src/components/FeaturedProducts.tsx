@@ -21,7 +21,8 @@ export const FeaturedProducts = () => {
             Our Bestsellers
           </h2>
           <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-            Discover our most loved treats — freshly baked with the finest ingredients.
+            Discover our most popular authentic African foodstuffs — carefully
+            sourced and delivered with care.
           </p>
         </motion.div>
 
