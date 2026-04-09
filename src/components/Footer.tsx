@@ -66,7 +66,7 @@ export const Footer = () => {
             <ul className="space-y-3 font-body">
               <li className="flex items-center gap-2 text-card/80">
                 <Phone size={18} className="text-primary" />
-                <span>+234 801 234 5678</span>
+                <span>+234 806 283 8990</span>
               </li>
               <li className="flex items-center gap-2 text-card/80">
                 <Instagram size={18} className="text-primary" />
