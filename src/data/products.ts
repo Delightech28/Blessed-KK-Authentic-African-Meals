@@ -5,7 +5,8 @@ import onions from "@/assets/products/Onions.jpeg";
 import snails from "@/assets/products/Oven dried snails.jpeg";
 import crayfish from "@/assets/products/50g freshly dried Crayfish (1).jpeg";
 import catfish from "@/assets/products/Dried catfish.jpeg";
-import cupcakes from "@/assets/products/cupcakes.jpg";
+import redOil from "@/assets/products/Red oil original.jpeg";
+import bitterLeaf from "@/assets/products/Dried Bitter Leaf _ Onugbu _ Ndole Leaves _ Ewuro - Uncut & Washed.jpeg";
 import cookies from "@/assets/products/cookies.jpg";
 
 export type ProductCategory =
@@ -73,7 +74,8 @@ export const products: Product[] = [
     id: "dried-locust-beans",
     name: "Dried Crayfish (500g)",
     price: 2000,
-    description: "Premium dried crayfish - essential protein for soups and traditional stews",
+    description:
+      "Premium dried crayfish - essential protein for soups and traditional stews",
     image: crayfish,
     category: "Proteins",
   },
@@ -81,7 +83,8 @@ export const products: Product[] = [
     id: "frozen-shrimp",
     name: "Dried Catfish (500g)",
     price: 4500,
-    description: "High-quality dried catfish for authentic seafood soups and meals",
+    description:
+      "High-quality dried catfish for authentic seafood soups and meals",
     image: catfish,
     category: "Proteins",
   },
@@ -91,16 +94,16 @@ export const products: Product[] = [
     price: 3000,
     description:
       "Pure, quality red palm oil - the heart of authentic African cooking",
-    image: cupcakes,
+    image: redOil,
     category: "Oils & Condiments",
   },
   {
     id: "vegetable-oil",
-    name: "Premium Vegetable Oil (2 liters)",
+    name: "Dried Bitter Leaf (100g)",
     price: 5500,
-    description: "Refined vegetable oil for frying and cooking",
-    image: cupcakes,
-    category: "Oils & Condiments",
+    description: "Authentic dried bitter leaf (onugbu) - perfect for traditional African soups",
+    image: bitterLeaf,
+    category: "Spices & Seasonings",
   },
   {
     id: "pepperspice-mix",
