@@ -1,5 +1,5 @@
 // Product data for Blessed KK Kitchen
-import chocolateCake from "@/assets/products/chocolate-cake.jpg";
+import egusi from "@/assets/products/Whole Egusi Fresh Authentic Hand peeled Nigeria Egusi _ Whole Melon seeds 100g.jpeg";
 import glazedDoughnuts from "@/assets/products/glazed-doughnuts.jpg";
 import meatPies from "@/assets/products/meat-pies.jpg";
 import cupcakes from "@/assets/products/cupcakes.jpg";
@@ -32,13 +32,13 @@ export const categories: ProductCategory[] = [
 
 export const products: Product[] = [
   {
-    id: "premium-garri",
-    name: "Premium White Garri (5kg)",
+    id: "premium-egusi",
+    name: "Premium Egusi (500g)",
     price: 3500,
     description:
-      "Fine, quality white garri made from cassava - perfect for jollof and soups",
-    image: chocolateCake,
-    category: "Grains",
+      "High-quality whole egusi (melon seeds) - finely hand-peeled for authentic egusi soup",
+    image: egusi,
+    category: "Proteins",
   },
   {
     id: "yellow-garri",
