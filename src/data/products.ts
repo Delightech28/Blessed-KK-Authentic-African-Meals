@@ -3,7 +3,8 @@ import egusi from "@/assets/products/Whole Egusi Fresh Authentic Hand peeled Nig
 import ogbono from "@/assets/products/HOW TO REMOVE LUMPS IN OGBONO SOUP.jpeg";
 import onions from "@/assets/products/Onions.jpeg";
 import snails from "@/assets/products/Oven dried snails.jpeg";
-import meatPies from "@/assets/products/meat-pies.jpg";
+import crayfish from "@/assets/products/50g freshly dried Crayfish (1).jpeg";
+import catfish from "@/assets/products/Dried catfish.jpeg";
 import cupcakes from "@/assets/products/cupcakes.jpg";
 import cookies from "@/assets/products/cookies.jpg";
 
@@ -70,18 +71,18 @@ export const products: Product[] = [
   },
   {
     id: "dried-locust-beans",
-    name: "Dried Locust Beans (500g)",
+    name: "Dried Crayfish (500g)",
     price: 2000,
-    description: "Authentic iru - essential for soups and traditional stews",
-    image: meatPies,
+    description: "Premium dried crayfish - essential protein for soups and traditional stews",
+    image: crayfish,
     category: "Proteins",
   },
   {
     id: "frozen-shrimp",
-    name: "Frozen Shrimp (500g)",
+    name: "Dried Catfish (500g)",
     price: 4500,
-    description: "High-quality frozen shrimp for seafood meals",
-    image: meatPies,
+    description: "High-quality dried catfish for authentic seafood soups and meals",
+    image: catfish,
     category: "Proteins",
   },
   {
