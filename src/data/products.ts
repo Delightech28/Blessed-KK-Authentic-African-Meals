@@ -1,7 +1,8 @@
 // Product data for Blessed KK Kitchen
 import egusi from "@/assets/products/Whole Egusi Fresh Authentic Hand peeled Nigeria Egusi _ Whole Melon seeds 100g.jpeg";
 import ogbono from "@/assets/products/HOW TO REMOVE LUMPS IN OGBONO SOUP.jpeg";
-import glazedDoughnuts from "@/assets/products/glazed-doughnuts.jpg";
+import onions from "@/assets/products/Onions.jpeg";
+import snails from "@/assets/products/Oven dried snails.jpeg";
 import meatPies from "@/assets/products/meat-pies.jpg";
 import cupcakes from "@/assets/products/cupcakes.jpg";
 import cookies from "@/assets/products/cookies.jpg";
@@ -51,20 +52,21 @@ export const products: Product[] = [
   },
   {
     id: "long-grain-rice",
-    name: "Long Grain Rice (10kg)",
+    name: "Fresh Onions (1kg)",
     price: 8500,
-    description: "Premium long grain parboiled rice, fluffy when cooked",
-    image: glazedDoughnuts,
-    category: "Grains",
+    description:
+      "Fresh, quality onions - essential vegetable for all African soups and stews",
+    image: onions,
+    category: "Legumes",
   },
   {
     id: "basmati-rice",
-    name: "Basmati Rice (5kg)",
+    name: "Oven Dried Snails (500g)",
     price: 7200,
     description:
-      "Fragrant basmati rice for special occasions and quality meals",
-    image: glazedDoughnuts,
-    category: "Grains",
+      "Premium oven dried snails - authentic protein for traditional soups and special dishes",
+    image: snails,
+    category: "Proteins",
   },
   {
     id: "dried-locust-beans",
