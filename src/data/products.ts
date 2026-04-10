@@ -1,10 +1,10 @@
 // Product data for Blessed KK Kitchen
 import egusi from "@/assets/products/Whole Egusi Fresh Authentic Hand peeled Nigeria Egusi _ Whole Melon seeds 100g.jpeg";
+import ogbono from "@/assets/products/HOW TO REMOVE LUMPS IN OGBONO SOUP.jpeg";
 import glazedDoughnuts from "@/assets/products/glazed-doughnuts.jpg";
 import meatPies from "@/assets/products/meat-pies.jpg";
 import cupcakes from "@/assets/products/cupcakes.jpg";
 import cookies from "@/assets/products/cookies.jpg";
-import redVelvetCake from "@/assets/products/red-velvet-cake.jpg";
 
 export type ProductCategory =
   | "Grains"
@@ -41,13 +41,13 @@ export const products: Product[] = [
     category: "Proteins",
   },
   {
-    id: "yellow-garri",
-    name: "Yellow Garri (5kg)",
+    id: "premium-ogbono",
+    name: "Premium Ogbono (500g)",
     price: 3800,
     description:
-      "Authentic yellow garri with rich flavor, ideal for traditional dishes",
-    image: redVelvetCake,
-    category: "Grains",
+      "High-quality ogbono (bush mango) powder - perfect for authentic ogbono soup with smooth, rich texture",
+    image: ogbono,
+    category: "Proteins",
   },
   {
     id: "long-grain-rice",
