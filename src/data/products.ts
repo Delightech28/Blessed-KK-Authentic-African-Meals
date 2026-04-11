@@ -11,7 +11,7 @@ import tigerNut from "@/assets/products/Export Large quantity of Tiger Nut (Cype
 import cocoyam from "@/assets/products/coco yam.jpeg";
 import stockfish from "@/assets/products/Stockfish_ okporoko_ price per.jpeg";
 import bombayDuck from "@/assets/products/Bombay duck_.jpeg";
-import scentLeaf from "@/assets/products/10 Health Benefits Of Scent Leaf You Do Not Know.jpeg";
+import scentLeaf from "@/assets/products/scent leaves.jpeg";
 
 export type ProductCategory =
   | "Grains"
