@@ -160,7 +160,7 @@ export const generateWhatsAppLink = (
   product: Product,
   quantity: number = 1,
 ): string => {
-  const phoneNumber = "2349163854228";
+  const phoneNumber = "2348062838990";
   const message = encodeURIComponent(
     `Hello Blessed KK 👋\n\nI'd like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability and delivery time. Thank you! 🙏`,
   );
