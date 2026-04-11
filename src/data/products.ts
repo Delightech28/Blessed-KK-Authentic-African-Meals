@@ -7,7 +7,10 @@ import crayfish from "@/assets/products/50g freshly dried Crayfish (1).jpeg";
 import catfish from "@/assets/products/Dried catfish.jpeg";
 import redOil from "@/assets/products/Red oil original.jpeg";
 import bitterLeaf from "@/assets/products/Dried Bitter Leaf _ Onugbu _ Ndole Leaves _ Ewuro - Uncut & Washed.jpeg";
-import cookies from "@/assets/products/cookies.jpg";
+import tigerNut from "@/assets/products/Export Large quantity of Tiger Nut (Cyperus esculentus) chufa_ And Shea Butter around the globe.jpeg";
+import cocoyam from "@/assets/products/coco yam.jpeg";
+import stockfish from "@/assets/products/Stockfish_ okporoko_ price per.jpeg";
+import bombayDuck from "@/assets/products/Bombay duck_.jpeg";
 
 export type ProductCategory =
   | "Grains"
@@ -107,19 +110,35 @@ export const products: Product[] = [
   },
   {
     id: "pepperspice-mix",
-    name: "African Pepper & Spice Mix (200g)",
+    name: "Tiger Nut (500g)",
     price: 1800,
     description:
-      "Authentic blend of peppers and spices for traditional seasonings",
-    image: cookies,
-    category: "Spices & Seasonings",
+      "Premium tiger nut (chufa) - nutritious and authentic African legume for snacks and traditional dishes",
+    image: tigerNut,
+    category: "Legumes",
   },
   {
     id: "crayfish",
-    name: "Dried Crayfish (300g)",
+    name: "Fresh Cocoyam (1kg)",
     price: 2200,
-    description: "Premium dried crayfish for authentic flavor in soups",
-    image: cookies,
+    description: "Fresh, quality cocoyam - versatile tuber for soups, porridges and traditional meals",
+    image: cocoyam,
+    category: "Legumes",
+  },
+  {
+    id: "stockfish",
+    name: "Stockfish (500g)",
+    price: 3200,
+    description: "Premium dried stockfish (okporoko) - essential for authentic soups and stews",
+    image: stockfish,
+    category: "Proteins",
+  },
+  {
+    id: "bombay-duck",
+    name: "Bombay Duck (500g)",
+    price: 2800,
+    description: "Quality dried bombay duck fish - perfect for traditional African soups and recipes",
+    image: bombayDuck,
     category: "Proteins",
   },
 ];
