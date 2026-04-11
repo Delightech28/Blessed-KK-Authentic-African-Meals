@@ -11,6 +11,7 @@ import tigerNut from "@/assets/products/Export Large quantity of Tiger Nut (Cype
 import cocoyam from "@/assets/products/coco yam.jpeg";
 import stockfish from "@/assets/products/Stockfish_ okporoko_ price per.jpeg";
 import bombayDuck from "@/assets/products/Bombay duck_.jpeg";
+import scentLeaf from "@/assets/products/10 Health Benefits Of Scent Leaf You Do Not Know.jpeg";
 
 export type ProductCategory =
   | "Grains"
@@ -140,6 +141,14 @@ export const products: Product[] = [
     description: "Quality dried bombay duck fish - perfect for traditional African soups and recipes",
     image: bombayDuck,
     category: "Proteins",
+  },
+  {
+    id: "scent-leaf",
+    name: "Scent Leaf (100g)",
+    price: 1500,
+    description: "Dried scent leaf (basil) - aromatic and flavorful herb for authentic African soups and stews",
+    image: scentLeaf,
+    category: "Spices & Seasonings",
   },
 ];
 
