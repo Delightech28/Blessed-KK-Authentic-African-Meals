@@ -40,8 +40,8 @@ export const categories: ProductCategory[] = [
 export const products: Product[] = [
   {
     id: "premium-egusi",
-    name: "Premium Egusi (500g)",
-    price: 3500,
+    name: "Premium Egusi (Painter)",
+    price: 15000,
     description:
       "High-quality whole egusi (melon seeds) - finely hand-peeled for authentic egusi soup",
     image: egusi,
@@ -49,8 +49,8 @@ export const products: Product[] = [
   },
   {
     id: "premium-ogbono",
-    name: "Premium Ogbono (500g)",
-    price: 3800,
+    name: "Premium Ogbono (Painter)",
+    price: 45000,
     description:
       "High-quality ogbono (bush mango) powder - perfect for authentic ogbono soup with smooth, rich texture",
     image: ogbono,
@@ -58,8 +58,8 @@ export const products: Product[] = [
   },
   {
     id: "long-grain-rice",
-    name: "Fresh Onions (1kg)",
-    price: 8500,
+    name: "Fresh Onions (Painter)",
+    price: 10000,
     description:
       "Fresh, quality onions - essential vegetable for all African soups and stews",
     image: onions,
@@ -67,8 +67,8 @@ export const products: Product[] = [
   },
   {
     id: "basmati-rice",
-    name: "Oven Dried Snails (500g)",
-    price: 7200,
+    name: "Oven Dried Snails (Pieces)",
+    price: 30000,
     description:
       "Premium oven dried snails - authentic protein for traditional soups and special dishes",
     image: snails,
@@ -76,8 +76,8 @@ export const products: Product[] = [
   },
   {
     id: "dried-locust-beans",
-    name: "Dried Crayfish (500g)",
-    price: 2000,
+    name: "Dried Crayfish (Painter)",
+    price: 15000,
     description:
       "Premium dried crayfish - essential protein for soups and traditional stews",
     image: crayfish,
@@ -85,8 +85,8 @@ export const products: Product[] = [
   },
   {
     id: "frozen-shrimp",
-    name: "Dried Catfish (500g)",
-    price: 4500,
+    name: "Dried Catfish (4 Pieces)",
+    price: 18000,
     description:
       "High-quality dried catfish for authentic seafood soups and meals",
     image: catfish,
@@ -94,8 +94,8 @@ export const products: Product[] = [
   },
   {
     id: "palm-oil",
-    name: "Red Palm Oil (1 liter)",
-    price: 3000,
+    name: "Red Palm Oil (25 liter)",
+    price: 60000,
     description:
       "Pure, quality red palm oil - the heart of authentic African cooking",
     image: redOil,
@@ -103,16 +103,17 @@ export const products: Product[] = [
   },
   {
     id: "vegetable-oil",
-    name: "Dried Bitter Leaf (100g)",
-    price: 5500,
-    description: "Authentic dried bitter leaf (onugbu) - perfect for traditional African soups",
+    name: "Dried Bitter Leaf (1kg)",
+    price: 4000,
+    description:
+      "Authentic dried bitter leaf (onugbu) - perfect for traditional African soups",
     image: bitterLeaf,
     category: "Spices & Seasonings",
   },
   {
     id: "pepperspice-mix",
-    name: "Tiger Nut (500g)",
-    price: 1800,
+    name: "Tiger Nut (Painter)",
+    price: 10000,
     description:
       "Premium tiger nut (chufa) - nutritious and authentic African legume for snacks and traditional dishes",
     image: tigerNut,
@@ -120,33 +121,28 @@ export const products: Product[] = [
   },
   {
     id: "crayfish",
-    name: "Fresh Cocoyam (1kg)",
-    price: 2200,
-    description: "Fresh, quality cocoyam - versatile tuber for soups, porridges and traditional meals",
+    name: "Dry Cocoyam (1kg)",
+    price: 15000,
+    description:
+      "Fresh, quality cocoyam - versatile tuber for soups, porridges and traditional meals",
     image: cocoyam,
     category: "Legumes",
   },
   {
     id: "stockfish",
-    name: "Stockfish (500g)",
-    price: 3200,
-    description: "Premium dried stockfish (okporoko) - essential for authentic soups and stews",
+    name: "Stockfish (Pieces)",
+    price: 10000,
+    description:
+      "Premium dried stockfish (okporoko) - essential for authentic soups and stews",
     image: stockfish,
     category: "Proteins",
   },
   {
-    id: "bombay-duck",
-    name: "Bombay Duck (500g)",
-    price: 2800,
-    description: "Quality dried bombay duck fish - perfect for traditional African soups and recipes",
-    image: bombayDuck,
-    category: "Proteins",
-  },
-  {
     id: "scent-leaf",
-    name: "Scent Leaf (100g)",
-    price: 1500,
-    description: "Dried scent leaf (basil) - aromatic and flavorful herb for authentic African soups and stews",
+    name: "Scent Leaf (1kg)",
+    price: 4000,
+    description:
+      "Dried scent leaf (basil) - aromatic and flavorful herb for authentic African soups and stews",
     image: scentLeaf,
     category: "Spices & Seasonings",
   },
